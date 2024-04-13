@@ -11,15 +11,7 @@ def Factorial(numero):
         Factorial(4) debe retornar 24
         Factorial(-2) debe retornar nulo
     '''
-    if (type(numero) != int) or (numero < 0):
-        return None
-    elif (numero == 0):
-        return None
-    else:
-        if (numero > 1):
-            numero = numero * Factorial(numero - 1)
-    return numero
-
+    
 def EsPrimo(valor):
     '''
     Esta función devuelve el valor booleano True si el número reibido como parámetro es primo, de lo 
@@ -31,15 +23,7 @@ def EsPrimo(valor):
         EsPrimo(7) debe retornar True
         EsPrimo(8) debe retornar False
     '''
-    primo = True
-    if (type(valor) != int) or (valor <= 1):
-        return None
-    else:
-        for elemento in range(2,valor):
-            if (valor%elemento == 0):
-                primo = False
-                break
-        return primo
+    
     
 def ClaseAnimal(especie, color):
     '''
@@ -64,11 +48,11 @@ def ClaseAnimal(especie, color):
             self.especie = especie
             self.color = color
             self.edad = int(0)
-            
+     
         def CumplirAnios(self):
             self.edad += 1
+            
             return self.edad
-    
-    Animal = ClaseAnimal(especie, color)
-    
-    return Animal
+        
+    animal = ClaseAnimal(especie, color)
+    return animal

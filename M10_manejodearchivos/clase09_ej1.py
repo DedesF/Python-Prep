@@ -1,6 +1,6 @@
 import sys
 # Comprobación de seguridad, ejecutar sólo si se recibe 3 argumentos
-if len(sys.argv) == 4:
+if len(sys.argv) == 3:
     print("El primer parámetro es:",sys.argv[1])
     print("El segundo parámetro es:",sys.argv[2])
     print("El tercer parámetro es:",sys.argv[3])
