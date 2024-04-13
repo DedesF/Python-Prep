@@ -1,8 +1,63 @@
 class calcular:
     def __init__(self):
-        pass      
-        # self.valores = valores        
+        pass   
 
+    def primoslist(lista):
+        for elemento in lista:
+            primo = True
+            if (elemento <= 1):
+                primo = False
+                print('El número', elemento, 'no es primo')
+                
+            else:                
+                for y in range(2, elemento):
+                    if (elemento%y == 0):
+                        primo = False
+                if (primo == True):
+                    print('El número', elemento, 'es primo')
+                else:
+                    print('El número', elemento, 'no es primo')
+    
+    def convertirlist(lista, origen, destino):
+        for valor in lista:
+            if (origen == 'celsius'):
+                if (destino == 'celsius'):
+                    print(valor,'grados celcius son', valor, 'grados celsius')
+                elif (destino == 'farenheit'):
+                    print(valor,'grados celcius son',(valor * 9 / 5) + 32, 'grados farenheit')
+                elif (destino == 'kelvin'):
+                    print(valor,'grados celcius son',valor + 273.15, 'grados kelvin')
+            elif (origen == 'farenheit'):
+                if (destino == 'celsius'):
+                    print(valor,'grados farenheit son',(valor - 32) * 5 / 9, 'grados celsius')
+                elif (destino == 'farenheit'):
+                    print(valor,'grados farenheit son',valor, 'grados farenheit')
+                elif (destino == 'kelvin'):
+                    print(valor,'grados farenheit son',((valor - 32) * 5 / 9) + 273.15, 'grados kelvin')
+            elif (origen == 'kelvin'):
+                if (destino == 'celsius'):
+                    print(valor,'grados kelvin son',valor - 273.15, 'grados celcius')
+                elif (destino == 'farenheit'):
+                    print(valor,'grados kelvin son',((valor - 273.15) * 9 / 5) + 32, 'grados farenheit')
+                elif (destino == 'kelvin'):
+                    print(valor,'grados kelvin son',valor, 'grados kelvin')
+            else:
+                print(' El valor debe ser un número entero.\n',
+                    'Origen y destino deben ser celsius, farenheit o kelvin')                
+    
+    def factoriallist(lista):
+        for i, nro in enumerate(lista):
+            if (type(nro) != int or nro < 0):
+                print('Debe ingresar un número entero y mayor que 0')
+                
+            elif (lista[i] == 0):
+                print('El factorial de 0 es 1')
+                
+            elif (nro > 1):                
+                nro = nro * calcular.factorial(nro - 1)
+                print('el factorial de', lista[i], 'es', nro)
+        
+    
     def primos(num):
         primo = True
         if (num <= 1):
